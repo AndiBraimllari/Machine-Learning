@@ -36,7 +36,7 @@ def build_tree(rows):
     if best_question is None:  # or lowest_disorder == 1:
         return Leaf(rows)
     true_rows, false_rows = partition(rows, best_question)
-    print(true_rows, "AND", false_rows)
+    print(true_rows, "AND", false_rows)  # remove [3] in both to see their respective details
     true_node = build_tree(true_rows)
     false_node = build_tree(false_rows)
     return DecisionNode(true_node, false_node, best_question)
@@ -122,11 +122,13 @@ def log(base, val):  # for later on if we want to make non binary questions
 
 
 data = [
-    ['heavy', 1, 1, 'Vampire'],
-    ['odd', 0, 0, 'Vampire'],
-    ['heavy', 1, 0, 'Vampire'],
-    ['odd', 0, 1, 'Normal'],
-    ['odd', 0, 1, 'Normal']
+    ['heavy', 1, 1, 'Vampire'],  # classic vampire but the fact that he likes garlic
+    ['odd', 0, 0, 'Vampire'],  # a vampire that has adapted his accent and got a tan
+    ['heavy', 1, 0, 'Vampire'],  # classic vampire
+    ['odd', 1, 1, 'Normal'],  # a pale, garlic loving local
+    ['odd', 0, 1, 'Normal'],  # a random, normal looking local
+    ['odd', 1, 1, '?'],
+    ['heavy', 0, 2, '?']  # just a person that REALLY loves garlic
 ]
 header = ["accent", "pale", "garlic", "label"]  # 1 notates yes and 0 notates no
 
