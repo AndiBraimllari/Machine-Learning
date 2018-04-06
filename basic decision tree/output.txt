@@ -1,0 +1,1 @@
+[['odd', 0, 0, 'Vampire'], ['heavy', 1, 0, 'Vampire']] AND [['heavy', 1, 1, 'Vampire'], ['odd', 0, 1, 'Normal'], ['odd', 0, 1, 'Normal']]
