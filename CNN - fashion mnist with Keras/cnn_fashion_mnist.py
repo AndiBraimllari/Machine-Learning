@@ -33,4 +33,4 @@ model.compile(optimizer=RMSprop(), loss='categorical_crossentropy', metrics=['ac
 
 model.fit(x_train, y_train, batch_size=128, epochs=5)
 score = model.evaluate(x_test, y_test)
-print(score)  # Loss and accuracy
+print(score)  # Loss and accuracy, ~90% 
